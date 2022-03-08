@@ -4,7 +4,6 @@ from __future__ import print_function
 
 import cv2
 import numpy as np
-from progress.bar import Bar
 import time
 import torch
 
@@ -104,7 +103,6 @@ class BaseDetector(object):
       if not pre_processed:
         images, meta = self.pre_process(image, scale, meta)
       else:
-        # import pdb; pdb.set_trace()
         images = pre_processed_images['images'][scale][0]
         meta = pre_processed_images['meta'][scale]
         meta = {k: v.numpy()[0] for k, v in meta.items()}

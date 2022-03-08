@@ -67,11 +67,8 @@ class CTDetDataset(data.Dataset):
         c[0] =  width - c[0] - 1
         
 
-    trans_input = get_affine_transform(
-      c, s, 0, [input_w, input_h])
-    inp = cv2.warpAffine(img, trans_input, 
-                         (input_w, input_h),
-                         flags=cv2.INTER_LINEAR)
+    trans_input = get_affine_transform(c, s, 0, [input_w, input_h])
+    inp = cv2.warpAffine(img, trans_input, (input_w, input_h), flags=cv2.INTER_LINEAR)
     inp = (inp.astype(np.float32) / 255.)
     if self.split == 'train' and not self.opt.no_color_aug:
       color_aug(self._data_rng, inp, self._eig_val, self._eig_vec)

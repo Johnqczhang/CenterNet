@@ -2,9 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import cv2
 import numpy as np
-from progress.bar import Bar
 import time
 import torch
 
@@ -15,9 +13,7 @@ except:
         ' do \n cd $CenterNet_ROOT/src/lib/external \n make')
 from models.decode import ctdet_decode
 from models.utils import flip_tensor
-from utils.image import get_affine_transform
 from utils.post_process import ctdet_post_process
-from utils.debugger import Debugger
 
 from .base_detector import BaseDetector
 

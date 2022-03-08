@@ -5,14 +5,11 @@ from __future__ import print_function
 import _init_paths
 
 import os
-import json
 import cv2
 import numpy as np
-import time
 from progress.bar import Bar
 import torch
 
-from external.nms import soft_nms
 from opts import opts
 from logger import Logger
 from utils.utils import AverageMeter
